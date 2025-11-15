@@ -1,18 +1,18 @@
-🎯 Video Relevance Analyzer — Hybrid RAG
-
+**🎯 Video Relevance Analyzer — Hybrid RAG
+**
 A lightweight, YouTube transcript–based relevance engine that evaluates how closely a video matches its claimed title/topic.
 Built with Streamlit, SentenceTransformers, BM25, and a dual-mode transcript fetcher (yt-dlp + Whisper fallback).
 
-🚀 Features
-1. Dual Transcript Extraction
+**🚀 Features**
+**1. Dual Transcript Extraction
+**
+**Fast Mode:** Uses YouTube subtitles via yt-dlp
 
-Fast Mode: Uses YouTube subtitles via yt-dlp
+**Deep Mode:** Downloads audio + transcribes using Whisper (base model)
 
-Deep Mode: Downloads audio + transcribes using Whisper (base model)
+**2. Hybrid RAG Relevance Model**
 
-2. Hybrid RAG Relevance Model
-
-Combines:
+**Combines:**
 
 Semantic embeddings (dense similarity using MiniLM)
 
@@ -24,21 +24,21 @@ Overlapping semantic chunking
 
 Weighted hybrid score → final % relevance (0–100)
 
-3. Full Streamlit UI
+**3. Full Streamlit UI**
 
 Paste YouTube URL + expected title
 
 Tune model settings: chunk size, overlap, dense/sparse weights
 
-Get:
+**Get:
 
-Final relevance %
+Final relevance %**
 
 Top matching transcript segment
 
 Debug dashboards for dense/sparse/hybrid scores
 
-📁 Project Structure
+**📁 Project Structure**
 📦 video-relevance-analyzer
 │
 ├── streamlit_app.py          # Main Streamlit UI
@@ -50,12 +50,12 @@ Debug dashboards for dense/sparse/hybrid scores
 ├── requirements.txt          # Dependencies
 └── README.md                 # (this file)
 
-🛠 Installation
+**🛠 Installation**
 git clone https://github.com/<your-username>/video-relevance-analyzer.git
 cd video-relevance-analyzer
 pip install -r requirements.txt
 
-Additional Requirements
+**Additional Requirements**
 
 Node.js required by yt-dlp for JSON3 subtitles
 
@@ -63,11 +63,11 @@ Optional: Whisper for deep transcript mode
 
 pip install openai-whisper
 
-▶️ Usage
+**▶️ Usage**
 Start the Streamlit app
 streamlit run streamlit_app.py
 
-Steps
+**Steps**
 
 Enter YouTube URL
 
@@ -91,9 +91,9 @@ Highest-matching transcript chunk
 
 Debug metrics (dense, sparse, combined scores)
 
-🧠 How the Relevance Model Works
-1. Title Expansion
-
+**🧠 How the Relevance Model Works**
+**1. Title Expansion
+**
 Deterministic text augmentation:
 
 Extract keywords
@@ -104,7 +104,7 @@ Add paraphrase signals
 
 Stabilizes BM25 + embedding relevance
 
-2. Semantic Chunking
+**2. Semantic Chunking**
 
 Word-level windowing
 
@@ -112,13 +112,13 @@ Default: 160 words, 30-word overlap
 
 Prevents noisy scoring of huge transcripts
 
-3. Dense Similarity (Embeddings)
+**3. Dense Similarity (Embeddings)**
 
 Using SentenceTransformer("all-MiniLM-L6-v2"):
 
 Compute vector similarity between title expansion & each chunk
-
-4. Sparse Similarity (BM25)
+**
+4. Sparse Similarity (BM25)**
 
 Custom BM25 over chunks:
 
@@ -126,11 +126,11 @@ Measures lexical match strength
 
 Complements semantic embeddings
 
-5. Hybrid Score
+**5. Hybrid Score**
 combined = 0.6 * dense + 0.4 * sparse
 final_score = mean(top_k_combined_scores) * 100
 
-6. Result
+**6. Result**
 
 Easy-to-interpret score (0–100)
 
@@ -138,13 +138,13 @@ Top matching transcript passage
 
 Optional detailed debugging
 
-📊 Example Output
-Relevance Score: 82.7%
+**📊 Example Output
+Relevance Score: 82.7%**
 
-Top Matching Segment:
+**Top Matching Segment:**
 "… the speaker discusses how to build APIs using Postman and compares it with..."
 
-🧩 File-Level Summary
+**🧩 File-Level Summary**
 transcript_utils.py
 
 Fast transcript extractor via yt-dlp (supports json3, vtt, srt)
@@ -207,11 +207,6 @@ print(result)
 
  Build backend API for programmatic usage
 
-🤝 Contributing
-
-PRs welcome!
-Issues, improvements, or suggestions → open an issue.
-
-📄 License
+**📄 License**
 
 MIT License — use freely.
