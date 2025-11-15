@@ -1,0 +1,9 @@
+streamlit
+sentence-transformers
+transformers
+torch
+yt-dlp
+openai-whisper
+numpy
+scikit-learn
+nltk

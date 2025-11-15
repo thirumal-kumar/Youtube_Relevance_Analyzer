@@ -1,0 +1,32 @@
+# Ignore Python cache
+__pycache__/
+*.pyc
+
+# Ignore models & embeddings
+*.bin
+*.pt
+*.safetensors
+*.h5
+*.pickle
+*.pkl
+*cache*/
+
+# Ignore virtual environment
+venv/
+
+# Ignore yt-dlp temp
+tmp_subs*
+tmp_audio*
+
+# Ignore OS files
+Thumbs.db
+.DS_Store
+
+# Ignore large data
+*.mp4
+*.m4a
+*.wav
+*.json3
+*.srv3
+*.vtt
+*.srt
