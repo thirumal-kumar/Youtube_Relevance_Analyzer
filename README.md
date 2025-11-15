@@ -1,4 +1,4 @@
-# 🎯 Video Relevance Analyzer — Hybrid RAG
+# 🎯 Video Relevance Analyzer
 
 A lightweight, YouTube transcript–based relevance engine that evaluates how closely a video matches its claimed title/topic.  
 Built with **Streamlit, SentenceTransformers, BM25**, and a dual-mode transcript fetcher (**yt-dlp + Whisper fallback**).
@@ -202,7 +202,7 @@ print(result)
 ---
 
 ## 📄 License
-MIT License — free to use and modify.
+MIT License - free to use and modify.
 
 ---
 
